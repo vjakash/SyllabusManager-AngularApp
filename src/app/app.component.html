@@ -8,10 +8,10 @@
             </div>
             <br>
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-12" cdkDropList (cdkDropListDropped)="onDropDay($event)">
                     <h4>Day({{noOfDays}})</h4>
                     <span *ngIf="days.length==0">No days available</span>
-                    <div *ngFor="let day of days;index as i">
+                    <div cdkDrag *ngFor="let day of days;index as i">
                         <app-day [i]="i" [day]="day" [days]="days" [global]="global"></app-day>
                     </div>
                     <br>
@@ -28,16 +28,24 @@
                             <app-modal [global]="global" [days]="days"></app-modal>
                             <!-- <span *ngIf="model"><app-modal></app-modal></span> -->
                         </div>
+                        <div class="col-lg-10">
+                            <div class="input-group mb-3">
+                                <input type="text" [(ngModel)]="searchTerm" class="form-control border border-dark" placeholder="Search topic by type" aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+                        </div>
                     </div>
                     <br>
                     <div class="row p-3">
                         <div class="col-lg-12 text-left">
+
                             <h3>Topics</h3>
                             <span *ngIf="days.length!=0">
-                                <span *ngIf="days[global.currentDay].topics.length==0">No Topic is available in day-{{global.currentDay+1}}</span>
-                            <span *ngFor="let topic of days[global.currentDay].topics;index as i">
-                                    &nbsp;<app-topic [topic]="topic" [global]="global" [days]="days" [i]="i"></app-topic>
-                                 </span>
+                                    <span *ngIf="days[global.currentDay].topics.length==0">No Topic is available in day-{{global.currentDay+1}}</span>
+                            <div class="list" cdkDropList (cdkDropListDropped)="onDrop($event)">
+                                <span cdkDrag *ngFor="let topic of days[global.currentDay].topics|topicFilter:searchTerm;index as i">
+                                        &nbsp;<app-topic [topic]="topic" [global]="global" [days]="days" [i]="i" ></app-topic>
+                                </span>
+                            </div>
                             </span>
                         </div>
                     </div>

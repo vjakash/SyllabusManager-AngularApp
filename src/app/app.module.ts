@@ -12,6 +12,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MoveModelComponent } from './move-model/move-model.component';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { HttpClientModule} from '@angular/common/http';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import {TopicFilterPipe} from '../app/appTopicFilter.pipe'
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { HttpClientModule} from '@angular/common/http';
     TopicComponent,
     DayComponent,
     ModalComponent,
-    MoveModelComponent
+    MoveModelComponent,
+    TopicFilterPipe
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,8 @@ import { HttpClientModule} from '@angular/common/http';
     NgbModule,
     FormsModule,
     AngularEditorModule ,
-    HttpClientModule
+    HttpClientModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]

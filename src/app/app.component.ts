@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
+import {CdkDragDrop,moveItemInArray} from '@angular/cdk/drag-drop';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,6 +10,7 @@ import { AngularEditorConfig } from '@kolkov/angular-editor';
 })
 export class AppComponent {
   model=false;
+  searchTerm="";
   editorConfig: AngularEditorConfig = {
     editable: true,
       spellcheck: true,
@@ -78,14 +81,14 @@ export class AppComponent {
         {
           number: 0,
           title: 'two',
-          type: 'Task',
+          type: 'Pre Read',
           content: 'jhvsj in root',
           mentorInst: ' hello hgjyfagjey'
         },
         {
           number: 0,
           title: 'three',
-          type: 'Task',
+          type: 'Topic',
           content: 'Content in rvcvoot',
           mentorInst: 'hey hgjyfagjey'
         },
@@ -119,5 +122,11 @@ export class AppComponent {
       mentorInst: 'hey hgjyfagjey',
     };
     this.days[this.global.currentDay].topics.push(obj);
+  }
+  onDrop(event:CdkDragDrop<object[]>){
+    moveItemInArray(this.days[this.global.currentDay].topics,event.previousIndex,event.currentIndex);
+  }
+  onDropDay(event:CdkDragDrop<object[]>){
+    moveItemInArray(this.days,event.previousIndex,event.currentIndex);
   }
 }
