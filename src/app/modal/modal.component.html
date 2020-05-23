@@ -1,6 +1,6 @@
 <ng-template #content let-modal>
     <div class="modal-header">
-        <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+        <h4 class="modal-title" id="modal-basic-title">Add Topic</h4>
         <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
@@ -11,7 +11,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1">Title</span>
                 </div>
-                <input [(ngModel)]="obj.title" id="title" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                <input [(ngModel)]="obj.title" id="title" class="form-control" placeholder="Title" aria-label="Username" aria-describedby="basic-addon1">
             </div>
         </div>
         <div class="input-group mb-3">
@@ -40,7 +40,7 @@
     </div>
     <div class="modal-footer">
         <!-- {{obj.title}} {{obj.type}} {{obj.content}} {{obj.mentorInst}} -->
-        <button type="button" class="btn btn-outline-dark" (click)="saveData();modal.close('save click');">Save</button>
+        <button type="button" class="btn btn-outline-dark" (click)="saveData();modal.close('save click');">Add</button>
     </div>
 </ng-template>
 

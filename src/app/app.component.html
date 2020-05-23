@@ -2,14 +2,14 @@
     <div class="row ">
         <div class="col-lg-3 mt-5">
             <div class="row">
-                <div class="col-lg-12">
-                    <button type="button" class="btn btn-danger" (click)="addBtn()"> Add Day</button>
+                <div class="col-lg-12 text-center">
+                    <button type="button" class="btn btn-danger" (click)="addBtn()" style="border-radius: 20px;width: 50%;"> Add Day</button>
                 </div>
             </div>
             <br>
             <div class="row">
                 <div class="col-lg-12" cdkDropList (cdkDropListDropped)="onDropDay($event)">
-                    <h4>Day({{noOfDays}})</h4>
+                    <h4>Days({{global.noOfDays}})</h4>
                     <span *ngIf="days.length==0">No days available</span>
                     <div cdkDrag *ngFor="let day of days;index as i">
                         <app-day [i]="i" [day]="day" [days]="days" [global]="global"></app-day>

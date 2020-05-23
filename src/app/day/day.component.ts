@@ -26,6 +26,7 @@ export class DayComponent implements OnInit {
     this.days.splice(this.i,1);
     this.global.currentDay=0;
     this.global.isTopicSelected=false;
+    this.global.noOfDays = this.days.length;
     console.log(this.days,this.global.currentDay,this.global.isTopicSelected);
   }
 }

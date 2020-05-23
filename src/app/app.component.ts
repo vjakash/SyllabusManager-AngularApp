@@ -58,14 +58,7 @@ export class AppComponent {
 };
   title = 'assesment6';
   faPlusCircle = faPlusCircle;
-  global = {
-    currentDay: 0,
-    currentTopic: 0,
-    isTopicSelected: true,
-    isContentSelected: true,
-    seletedDay:0,
-    selectedTopic:0
-  };
+  
 
   days = [
     {
@@ -95,7 +88,15 @@ export class AppComponent {
       ],
     },
   ];
-  noOfDays = this.days.length;
+  global = {
+    currentDay: 0,
+    currentTopic: 0,
+    isTopicSelected: true,
+    isContentSelected: true,
+    seletedDay:0,
+    selectedTopic:0,
+    noOfDays :this.days.length
+  };
 
   addBtn() {
     let num=0;
@@ -107,6 +108,7 @@ export class AppComponent {
       topics: [],
     };
     this.days.push(obj);
+    this.global.noOfDays = this.days.length;
     console.log(this.days, this.global.isTopicSelected,this.global.seletedDay);
   }
   contentChange() {
