@@ -1,0 +1,11 @@
+<div class="row  text-white " (click)="selectTopic()" [ngClass]="{'bg-success':this.global.selectedTopic==i,'bg-dark':this.global.selectedTopic!=i}">
+    <div class="col-lg-6 text-left colPad">
+        {{topic.title}}
+    </div>
+    <div class="col-lg-6 text-right colPad">
+        <button class="btn btn-success btnPad" [ngClass]="{'btn-dark':this.global.selectedTopic==i,'btn-success':this.global.selectedTopic!=i}">{{topic.type}} </button>&nbsp;
+        <app-move-model [global]="global" [days]="days" [i]="i"></app-move-model>&nbsp;
+
+        <button class=" btn-danger " (click)="rmvTopic()" style="border-radius: 20px;border: none;"> X </button>&nbsp;
+    </div>
+</div>

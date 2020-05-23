@@ -1,0 +1,26 @@
+.add {
+    background: transparent;
+    border: none;
+}
+
+.tempContent {
+    background-color: white;
+}
+
+.borderBottom {
+    border-bottom: 2px solid #28A745;
+}
+
+a {
+    color: darkblue;
+    font-size: 1.2rem;
+}
+
+a:hover {
+    font-size: 1.3rem;
+    text-decoration: none;
+}
+
+.selected {
+    color: #28A745;
+}
