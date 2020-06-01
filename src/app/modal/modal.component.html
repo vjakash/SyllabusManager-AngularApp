@@ -11,14 +11,14 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1">Title</span>
                 </div>
-                <input [(ngModel)]="obj.title" id="title" class="form-control" placeholder="Title" aria-label="Username" aria-describedby="basic-addon1">
+                <input [(ngModel)]="obj.title" id="title" class="form-control" placeholder="Title" aria-label="Username" aria-describedby="basic-addon1" required>
             </div>
         </div>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <label class="input-group-text" for="inputGroupSelect01">Type</label>
             </div>
-            <select class="custom-select" id="inputGroupSelect02" [(ngModel)]="obj.type">
+            <select class="custom-select" id="inputGroupSelect02" [(ngModel)]="obj.type" required>
                   <option value="Task">Task</option>
                   <option value="Pre Read">Pre Read</option>
                   <option value="Topic">Topic</option>
@@ -28,14 +28,14 @@
             <div class="input-group-prepend">
                 <span class="input-group-text">Content</span>
             </div>
-            <textarea [(ngModel)]="obj.content" class="form-control" aria-label="With textarea"></textarea>
+            <textarea [(ngModel)]="obj.content" class="form-control" aria-label="With textarea" required></textarea>
         </div>
         <br>
         <div class="input-group">
             <div class="input-group-prepend">
                 <span class="input-group-text">Instruction to mentor</span>
             </div>
-            <textarea [(ngModel)]="obj.mentorInst" class="form-control" aria-label="With textarea"></textarea>
+            <textarea [(ngModel)]="obj.mentorInst" class="form-control" aria-label="With textarea" required></textarea>
         </div>
     </div>
     <div class="modal-footer">

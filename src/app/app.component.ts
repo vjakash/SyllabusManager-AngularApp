@@ -131,4 +131,7 @@ export class AppComponent {
   onDropDay(event:CdkDragDrop<object[]>){
     moveItemInArray(this.days,event.previousIndex,event.currentIndex);
   }
+
 }
+
+
